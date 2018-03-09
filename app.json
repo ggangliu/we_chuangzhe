@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#303538",
+    "navigationBarTitleText": "微信小程序，专业开发团队",
+    "navigationBarTextStyle": "light"
+  }
+}

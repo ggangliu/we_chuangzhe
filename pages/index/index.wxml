@@ -1,0 +1,100 @@
+<!--index.wxml-->
+<view class="ResumeContainer">
+  <view class="overlay" wx-if="{{overlay}}"></view>
+  
+  <!-- banner 区域-->
+  <view class="banner">
+    <image src="../../images/head1.png" class="head hidden" />
+    <view class="info hidden">
+      <view class="titleResume">We创者</view>
+      <view class="enName">{{baseInfo.enName}}</view>
+      <view class="title">{{baseInfo.title}}</view>
+    </view>
+    <image src="../../images/bg3.jpg" class="bannerBg" />
+    <view class="bannerOverlay"></view>
+  </view>
+
+  <!-- 关于我 区域-->
+  <view class="aboutMe area hidden">
+    <view class="title ">
+
+      关于我们
+    </view>
+    <view class="iconArea">
+      <image src="../../images/Weicon.png" />
+      <text>{{baseInfo.nameAndSex}}</text>
+    </view>
+    <view class="iconArea">
+      <image src="../../images/icon2.png" />
+      <text>{{baseInfo.birthday}}</text>
+    </view>
+    <view class="iconArea">
+      <image src="../../images/icon3.png" />
+      <text>{{baseInfo.diplomaAndSchool}}</text>
+    </view>
+    <view class="iconArea">
+      <image src="../../images/icon4.png" />
+      <text>{{baseInfo.workAge}}</text>
+    </view>
+    <view class="iconArea">
+      <image src="../../images/icon5.png" />
+      <text>{{baseInfo.location}}</text>
+    </view>
+    <view class="iconArea">
+      <image src="../../images/icon6.png" />
+      <text>{{baseInfo.wantPosition}}</text>
+    </view>
+  </view>
+  <!-- 联系方式区域-->
+  <view class="contactList area ">
+    <view class="title">
+      联系方式
+    </view>
+    <view class="haveData content" wx:if="{{isShowContact}}">
+      <view class="iconArea" bindtap='callPhone'>
+        <image src="../../images/icon8.png" />
+        <text class="link" >{{baseInfo.mobilePhone}}</text>
+      </view>
+      <view class="iconArea"   bindtap="setClipboard" data-content="{{baseInfo.email}}">
+        <image src="../../images/icon9.png" />
+        <text class="link">{{baseInfo.email}}</text>
+      </view>
+      <view class="iconArea" bindtap="setClipboard" data-content="{{baseInfo.wechatNo}}" >
+        <image src="../../images/icon10.png" />
+        <text class="link">{{baseInfo.wechatNo}}</text>
+      </view>
+      <view class="iconArea" wx:if="{{baseInfo.github}}" bindtap="setClipboard" data-content="{{baseInfo.githubUrl}}">
+        <image src="../../images/icon11.png" />
+        <text class="link">{{baseInfo.github}}</text>
+      </view>
+    </view>
+    <view class="noData content" wx:if="{{!isShowContact}}">
+      <image src="../../images/icon12.png" />
+      <view>作者暂时隐藏了联系方式，可能最近没有找工作的想法</view>
+    </view>
+  </view>
+
+  <view class="aboutMe area hidden">
+    <view class="title">
+      致谢
+    </view>
+    <view class="content">
+      <view class="iconArea" wx:if="{{baseInfo.github}}">
+        <image src="../../images/icon13.png" />
+        <text>感谢您花时间了解我们，期待能有机会和您合作。</text>
+      </view>
+      <view class='button'>
+        <image src="../../images/button_image.jpg"/>
+      </view>
+    </view>
+  </view>
+
+   <view class="powerBy" bindtap="setClipboard" data-content="https://github.com/ggangliu">
+    Powered By <text class="link">GitHub : @ggangliu</text>
+   </view>
+
+
+
+
+
+</view>
