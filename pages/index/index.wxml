@@ -2,7 +2,6 @@
 <view class="ResumeContainer">
   <view class="overlay" wx-if="{{overlay}}"></view>
   
-  <!-- banner 区域-->
   <view class="banner">
     <image src="../../images/head1.png" class="head hidden" />
     <view class="info hidden">
@@ -14,41 +13,31 @@
     <view class="bannerOverlay"></view>
   </view>
 
-  <!-- 关于我 区域-->
   <view class="aboutMe area hidden">
     <view class="title ">
-
-      关于我们
+    小程序到底是什么？
     </view>
-    <view class="iconArea">
-      <image src="../../images/Weicon.png" />
-      <text>{{baseInfo.nameAndSex}}</text>
-    </view>
-    <view class="iconArea">
-      <image src="../../images/icon2.png" />
-      <text>{{baseInfo.birthday}}</text>
-    </view>
-    <view class="iconArea">
-      <image src="../../images/icon3.png" />
-      <text>{{baseInfo.diplomaAndSchool}}</text>
-    </view>
-    <view class="iconArea">
-      <image src="../../images/icon4.png" />
-      <text>{{baseInfo.workAge}}</text>
-    </view>
-    <view class="iconArea">
-      <image src="../../images/icon5.png" />
-      <text>{{baseInfo.location}}</text>
-    </view>
-    <view class="iconArea">
-      <image src="../../images/icon6.png" />
-      <text>{{baseInfo.wantPosition}}</text>
-    </view>
+    <view font-size='1.2em'>
+    顾名思义，[小程序]本质上与我们平常经常使用的App和操作系统都一样，都是一段电脑程序。你可以将小程序理解为[运行在微信上的App]。
+    与普通的App不同的是，小程序的语言使用网页前端的技术栈，并且使用JavaScript运行环境，相当于一个浏览器。
+    小程序具有高级的硬件处理接口（例如蓝牙、重力感应等），同时运行环境也更接近原生应用，效率更高。正因体积小，小程序才可以做到[即开即用]--对于用户感知来说，小程序几乎是点击后等待一两秒，就可以使用，
+    就像是打开网页链接一样，使用后，用户甚至不需要额外管理小程序。
+    除了使用层面本身的良好体验，由于小程序是直接集成于微信中的，所以它还可以配合微信完成传统App和html5无法达成的功能。例如，分享卡片可以携带相应微信群信息，当用户从微信群进入小程序，开发者可以了解到用户从哪一个群进入了小程序
+    </view>  
   </view>
-  <!-- 联系方式区域-->
+
   <view class="contactList area ">
     <view class="title">
-      联系方式
+    样例展示
+    </view>
+    <view>
+      <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="300"/>
+          </swiper-item>
+        </block>
+      </swiper>
     </view>
     <view class="haveData content" wx:if="{{isShowContact}}">
       <view class="iconArea" bindtap='callPhone'>
@@ -68,33 +57,5 @@
         <text class="link">{{baseInfo.github}}</text>
       </view>
     </view>
-    <view class="noData content" wx:if="{{!isShowContact}}">
-      <image src="../../images/icon12.png" />
-      <view>作者暂时隐藏了联系方式，可能最近没有找工作的想法</view>
-    </view>
   </view>
-
-  <view class="aboutMe area hidden">
-    <view class="title">
-      致谢
-    </view>
-    <view class="content">
-      <view class="iconArea" wx:if="{{baseInfo.github}}">
-        <image src="../../images/icon13.png" />
-        <text>感谢您花时间了解我们，期待能有机会和您合作。</text>
-      </view>
-      <view class='button'>
-        <image src="../../images/button_image.jpg"/>
-      </view>
-    </view>
-  </view>
-
-   <view class="powerBy" bindtap="setClipboard" data-content="https://github.com/ggangliu">
-    Powered By <text class="link">GitHub : @ggangliu</text>
-   </view>
-
-
-
-
-
 </view>
